@@ -42,6 +42,17 @@ class Book(models.Model):
         Genre,
         help_text="Select a genre for this book"
         )
+    language = models.ForeignKey(
+        'Language',
+        on_delete=models.SET_NULL,
+        null=True
+        )
+
+    def display_genre(self):
+        """Creates a string for the Genre. Required to display genre in Admin"""
+        return ', '.join([genre.name for genre in self.genre.all()[:3]])
+
+    display_genre.short_description = 'Genre'
 
     def __str__(self):
         return self.title
@@ -88,8 +99,8 @@ class Author(models.Model):
     """Model representing an author"""
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
-    date_of_birth = models.DateField(null=True, blank=True)
-    date_of_death = models.DateField('Died', null=True, blank=True)
+    date_of_birth = models.DateField(help_text="YYYY-MM-DD", null=True, blank=True)
+    date_of_death = models.DateField('Died', help_text="YYYY-MM-DD", null=True, blank=True)
 
     def get_absolute_url(self):
         return reverse('author-detail', args=[str(self.id)])
