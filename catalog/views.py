@@ -14,6 +14,9 @@ def index(request):
     num_genres = Genre.objects.count()
     num_languages = Language.objects.count()
 
+    # number of visits to this view, as counted in the session variable
+    num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits + 1
 
     return render(request, 'index.html', {
         'num_books': num_books,
@@ -22,6 +25,7 @@ def index(request):
         'num_authors': num_authors,
         'num_genres': num_genres,
         'num_languages': num_languages,
+        'num_visits': num_visits,
     })
 
 
