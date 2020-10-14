@@ -7,7 +7,7 @@
 - Start the development server.
 - Visit the site locally at http://localhost:8000.
 
-#### Screenshots
+### Screenshots
 ![screenshot1](https://i.imgur.com/S0kRcBc.png)
 ![screenshot1](https://i.imgur.com/3Hnuk7l.png)
 ![screenshot1](https://i.imgur.com/SRhi29j.png)
