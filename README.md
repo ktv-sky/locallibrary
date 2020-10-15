@@ -4,7 +4,6 @@
 1. Clone or download this repo.
 2. Set up the virtual environment.
 3. Run the following commands:
-
     ```pip3 install -r requirements.txt
     python3 manage.py makemigrations
     python3 manage.py migrate
