@@ -4,13 +4,15 @@
 1. Clone or download this repo.
 2. Set up the virtual environment.
 3. Run the following commands:
-    ```pip3 install -r requirements.txt
+    ```
+    pip3 install -r requirements.txt
     python3 manage.py makemigrations
     python3 manage.py migrate
     python3 manage.py collectstatic
     python3 manage.py test # Run the standard tests. These should all pass.
     python3 manage.py createsuperuser # Create a superuser
-    python3 manage.py runserver```
+    python3 manage.py runserver
+    ```
 4. Open admin site http://127.0.0.1:8000/admin/ and create a few test objects of each type.
 5. Open http://127.0.0.1:8000 to see the main site, with your new objects.
 
